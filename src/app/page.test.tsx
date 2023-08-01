@@ -25,6 +25,8 @@ describe('Portfolio', () => {
       const { href, ariaLabel } = config.contacts.items[index];
       expect(link).toHaveAttribute('aria-label', ariaLabel);
       expect(link).toHaveAttribute('href', href);
+      expect(link).toHaveAttribute('target', '_blank');
+      expect(link).toHaveAttribute('rel', 'noopener noreferrer');
       expect(screen.getByTestId(ariaLabel)).toHaveAttribute('aria-hidden', 'true');
     });
   });
