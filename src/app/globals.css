@@ -1,3 +1,38 @@
+:root {
+  /* SPACING */
+  --spacing-0: 0rem;
+  --spacing-4: 0.25rem;
+  --spacing-8: 0.5rem;
+  --spacing-12: 0.75rem;
+  --spacing-16: 1rem;
+  --spacing-24: 1.5rem;
+  --spacing-32: 2rem;
+  --spacing-48: 3rem;
+  --spacing-64: 4rem;
+  --spacing-128: 8rem;
+
+  /* FONT SIZE */
+  --font-size-10: 0.625rem;
+  --font-size-12: 0.75rem;
+  --font-size-14: 0.875rem;
+  --font-size-16: 1rem;
+  --font-size-20: 1.25rem;
+  --font-size-24: 1.5rem;
+  --font-size-32: 2rem;
+  --font-size-40: 2.5rem;
+  --font-size-44: 2.75rem;
+  --font-size-64: 4rem;
+  --font-size-96: 6rem;
+  --font-size-128: 8rem;
+
+  /* BORDER RADIUS */
+  --border-radius-circle: 50%;
+  --border-radius-4: 0.25rem;
+  --border-radius-8: 0.5rem;
+  --border-radius-16: 1rem;
+  --border-radius-20: 1.25rem;
+}
+
 * {
   box-sizing: border-box;
   padding: 0;
