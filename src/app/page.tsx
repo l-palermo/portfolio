@@ -4,8 +4,6 @@ import styles from './page.module.css';
 import ForwardSlashIcon from '../assets/svgs/forward-slash.svg';
 import config from '../lib/config';
 
-import Link from 'next/link';
-
 export default function Home() {
   const { contacts, headerGroup, footerAriaLabel } = config;
   return (
@@ -20,10 +18,10 @@ export default function Home() {
       <footer className={styles['footer']} aria-label={footerAriaLabel}>
         <ul className={styles['footer__contacts']} aria-label={contacts.ariaLabel}>
           {contacts.items.map(({ Icon, href, ariaLabel }) => (
-            <li key={ariaLabel} className={styles['footer__contacts__item']}>
-              <Link href={href} aria-label={ariaLabel} target="_blank" rel="noopener noreferrer">
+            <li key={href} className={styles['footer__contacts__item']}>
+              <a href={href} aria-label={ariaLabel} target="_blank" rel="noopener noreferrer">
                 <Icon className={styles['footer__contacts__item__icon']} aria-hidden data-testid={ariaLabel} />
-              </Link>
+              </a>
             </li>
           ))}
         </ul>
