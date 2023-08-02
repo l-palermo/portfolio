@@ -16,6 +16,7 @@
   --font-size-12: 0.75rem;
   --font-size-14: 0.875rem;
   --font-size-16: 1rem;
+  --font-size-18: 1.124rem;
   --font-size-20: 1.25rem;
   --font-size-24: 1.5rem;
   --font-size-32: 2rem;
@@ -31,6 +32,13 @@
   --border-radius-8: 0.5rem;
   --border-radius-16: 1rem;
   --border-radius-20: 1.25rem;
+
+  /* TEMP MEDIA QUERIES */
+  --mq-small: 375px;
+  --mq-phablet: 512px;
+  --mq-medium: 768px;
+  --mq-large: 1024px;
+  --mq-huge: 1408px;
 }
 
 * {
