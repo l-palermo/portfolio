@@ -1,0 +1,67 @@
+:root {
+  /* SPACING */
+  --spacing-0: 0rem;
+  --spacing-4: 0.25rem;
+  --spacing-8: 0.5rem;
+  --spacing-12: 0.75rem;
+  --spacing-16: 1rem;
+  --spacing-24: 1.5rem;
+  --spacing-32: 2rem;
+  --spacing-40: 2.5rem;
+  --spacing-48: 3rem;
+  --spacing-64: 4rem;
+  --spacing-96: 6rem;
+  --spacing-128: 8rem;
+
+  /* FONT SIZE */
+  --font-size-10: 0.625rem;
+  --font-size-12: 0.75rem;
+  --font-size-14: 0.875rem;
+  --font-size-16: 1rem;
+  --font-size-18: 1.124rem;
+  --font-size-20: 1.25rem;
+  --font-size-24: 1.5rem;
+  --font-size-32: 2rem;
+  --font-size-40: 2.5rem;
+  --font-size-44: 2.75rem;
+  --font-size-64: 4rem;
+  --font-size-96: 6rem;
+  --font-size-128: 8rem;
+
+  /* BORDER RADIUS */
+  --border-radius-circle: 50%;
+  --border-radius-4: 0.25rem;
+  --border-radius-8: 0.5rem;
+  --border-radius-16: 1rem;
+  --border-radius-20: 1.25rem;
+
+  /* TEMP MEDIA QUERIES */
+  --mq-small: 375px;
+  --mq-phablet: 512px;
+  --mq-medium: 768px;
+  --mq-large: 1024px;
+  --mq-huge: 1408px;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  line-height: 1.5;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background-color: rgb(16, 0, 116);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}

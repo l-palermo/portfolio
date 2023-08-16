@@ -17,3 +17,11 @@ TBR
 Using BEM convention for CSS class names is the best way to make sense of a long CSS staructure and helps reasoning abour the inheritance between parent and children and their responsabilities.
 
 I need to choose a unified approach choosing to use Grid or Flexbox.
+
+### FOLDER STRUCTURE
+
+To enhance the project's readability, I have created two folders within the /app directory, in accordance with Next.js guidelines. One is named _, serving as a private folder that Next.js will exclude while generating the project's routes. The other folder is named Routes, serving the purpose of grouping routes. This approach allows me to centralize all layout and routing-related components within a single folder, thereby establishing a clear distinction between the app's content and its routing. Additionally, this approach maintains a consistent folder structure for components without adding unnecessary complexity to the /app directory.
+
+### HUSKY & GITHUB ACTIONS
+
+These two tools assist me in my workflow by ensuring that the test and build scripts are executed with each commit and push. Moreover, they prevent the merging of pull requests if these scripts fail to pass successfully.
