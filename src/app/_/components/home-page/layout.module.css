@@ -1,0 +1,137 @@
+.root {
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: min-content min-content 1fr;
+  grid-template-areas: 'header' 'footer' 'main-content';
+  column-gap: 10rem;
+  row-gap: var(--spacing-40);
+  padding: var(--spacing-48) var(--spacing-16);
+  margin: 0 auto;
+  color: white;
+
+  @media (min-width: 1024px) {
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 3fr 5fr;
+    grid-template-areas: 'header main-content' 'footer main-content';
+    max-width: 80rem;
+  }
+}
+
+.header-group {
+  position: relative;
+  grid-area: header;
+  max-width: 30rem;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  row-gap: var(--spacing-4);
+  padding: 0 var(--spacing-16);
+
+  @media (min-width: 512px) {
+    display: grid;
+    grid-template-columns: repeat(3, min-content);
+    align-items: center;
+  }
+
+  @media (min-width: 1024px) {
+    position: fixed;
+  }
+}
+
+.header {
+  font-size: var(--font-size-18);
+  font-weight: 700;
+  white-space: nowrap;
+  text-transform: uppercase;
+
+  @media (min-width: 512px) {
+    font-size: var(--font-size-24);
+  }
+}
+
+.separator--header {
+  display: none;
+
+  @media (min-width: 512px) {
+    display: flex;
+    width: 4.5rem;
+    border: 0.5px solid;
+    border-color: inherit;
+    transform: rotate(145deg);
+    margin: 0 var(--spacing-4);
+  }
+}
+
+.subheader {
+  font-size: var(--font-size-18);
+  font-weight: 300;
+  justify-self: end;
+  white-space: nowrap;
+  text-transform: capitalize;
+
+  @media (min-width: 512px) {
+    font-size: var(--font-size-24);
+  }
+}
+
+.description {
+  grid-column: 1 / span 3;
+  font-weight: 300;
+  font-size: var(--font-size-12);
+  margin-top: var(--spacing-4);
+  opacity: 0.7;
+
+  @media (min-width: 512px) {
+    font-size: var(--font-size-16);
+  }
+}
+
+.main {
+  grid-area: main-content;
+  padding-top: var(--spacing-24);
+
+  @media (min-width: 512px) {
+    padding-top: var(--spacing-48);
+  }
+}
+
+.footer {
+  grid-area: footer;
+  align-self: self-end;
+  padding: 0 var(--spacing-16);
+
+  @media (min-width: 1024px) {
+    position: fixed;
+    bottom: var(--spacing-48);
+  }
+}
+
+.footer__contacts {
+  display: flex;
+  align-items: flex-end;
+  gap: var(--spacing-16);
+}
+
+.footer__contacts__item {
+  list-style-type: none;
+}
+
+.footer__contacts__item__icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  display: flex;
+  align-items: center;
+  fill: white;
+  transition: fill 0.5s;
+
+  @media (min-width: 512px) {
+    width: 2rem;
+    height: 2rem;
+  }
+}
+
+.footer__contacts__item__icon:hover {
+  fill: rgb(102 238 255);
+}
