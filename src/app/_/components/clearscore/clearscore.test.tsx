@@ -1,7 +1,9 @@
-import { render, screen } from '@testing-library/react';
+import { render, screen, within } from '@testing-library/react';
 
 import ClearScore from './clearscore';
 import pageCopy from './lib/content';
+
+const INTERPLAION_SYMBOLS_REGEX = /<\d>|<\/\d>/g;
 
 describe('ClearScore', () => {
   it('should render a link to go navigate back to the home page', () => {
@@ -13,24 +15,37 @@ describe('ClearScore', () => {
   it('should render the intro', () => {
     render(<ClearScore />);
 
-    pageCopy.intro.forEach((line) => {
-      expect(screen.getByText(line)).toBeVisible();
+    const { ariaLabel, items } = pageCopy.intro;
+    const linkLabel = items[0].text.split(INTERPLAION_SYMBOLS_REGEX)[1];
+    const linkProps = items[0].components?.[0].props;
+    const introLines = screen.getAllByTestId('intro-line');
+
+    expect(screen.getByRole('article', { name: ariaLabel })).toBeVisible();
+    expect(introLines.length).toBe(items.length);
+    introLines.forEach((paragraph, index) => {
+      expect(paragraph).toHaveTextContent(items[index].text.replaceAll(INTERPLAION_SYMBOLS_REGEX, ''));
     });
+    expect(screen.getByRole('link', { name: linkLabel })).toHaveAttribute('href', linkProps?.href);
+    expect(screen.getByRole('link', { name: linkLabel })).toHaveAttribute('target', linkProps?.target);
+    expect(screen.getByRole('link', { name: linkLabel })).toHaveAttribute('rel', linkProps?.rel);
   });
   it('should render the tasks', () => {
     render(<ClearScore />);
     const { title, tasks } = pageCopy.roleSummary;
 
     expect(screen.getByRole('heading', { level: 2, name: title })).toBeVisible();
-    tasks.forEach((line) => {
-      expect(screen.getByText(line)).toBeVisible();
+    const allTasks = within(screen.getByRole('list', { name: title })).getAllByRole('listitem');
+
+    expect(allTasks.length).toBe(tasks.length);
+    allTasks.forEach((task, index) => {
+      expect(task).toHaveTextContent(tasks[index].replaceAll(INTERPLAION_SYMBOLS_REGEX, ''));
     });
   });
   it('should render an acessible intro to the app preview section', () => {
     render(<ClearScore />);
-    const { accessibleIntro } = pageCopy.appPreviews;
+    const { accessibilityIntro } = pageCopy.appPreviews;
 
-    expect(screen.getByRole('heading', { level: 2, name: accessibleIntro })).toBeVisible();
+    expect(screen.getByText(accessibilityIntro)).toBeVisible();
   });
   it('should render the app preview sections', () => {
     render(<ClearScore />);

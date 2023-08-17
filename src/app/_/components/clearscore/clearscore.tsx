@@ -1,35 +1,61 @@
+import { ReactNode } from 'react';
 import Link from 'next/link';
-import pageCopy from './lib/content';
 
+import pageContent from './lib/content';
 import styles from './clearscore.module.css';
-import ChevronLeftIcon from '../../../_/assets/icons/chevron-left.svg';
+import ArrowBackIcon from '../../assets/icons/arrow-back.svg';
+import ArrowOutwardIcon from '../../assets/icons/arrow-outward.svg';
+import interpolateStringWithComponents from '../../helpers/interpolate-strings';
+
+function HighlightText({ children }: { children?: ReactNode }) {
+  return <span className={styles['list__item-task--highlight']}>{children}</span>;
+}
+
+function TextLink({ children, ...props }: { children?: ReactNode }) {
+  return (
+    <a className={styles['intro__link']} {...props}>
+      {children}
+      <ArrowOutwardIcon className={styles['intro__link__icon']} />
+    </a>
+  );
+}
+
+const componentMap = {
+  TextLink,
+};
+
+function mapComponents(components?: { componentId: keyof typeof componentMap; props: Record<string, string> }[]) {
+  return components?.map(({ componentId, props }) => ({ Component: componentMap[componentId], props }));
+}
 
 export default function ClearScore() {
-  const { intro, roleSummary, backNavigation, appPreviews } = pageCopy;
+  const { intro, roleSummary, backNavigation, appPreviews } = pageContent;
   return (
     <div className={styles['container']}>
       <Link href={backNavigation.path} className={styles['link']}>
-        <ChevronLeftIcon className={styles['link__icon']} aria-hidden />
+        <ArrowBackIcon className={styles['link__icon']} aria-hidden />
         <p>{backNavigation.cta}</p>
       </Link>
-      <article className={styles['intro']}>
-        {intro.map((text) => (
-          <p key={text}>{text}</p>
+      <article className={styles['intro']} aria-label={intro.ariaLabel}>
+        {intro.items.map(({ text, components }) => (
+          <p key={text} className={styles['intro__text']} data-testid="intro-line">
+            {interpolateStringWithComponents(text, mapComponents(components))}
+          </p>
         ))}
       </article>
       <section className={styles['section']}>
         <h2 className={styles['section__title']}>{roleSummary.title}</h2>
-        <ul className={styles['list']}>
+        <ul className={styles['list']} aria-label={roleSummary.title}>
           {roleSummary.tasks.map((task) => {
             return (
               <li key={task} className={styles['list__item-task']}>
-                {task}
+                {interpolateStringWithComponents(task, [{ Component: HighlightText }])}
               </li>
             );
           })}
         </ul>
       </section>
-      <h2 className={styles['visually-hidden']}>{appPreviews.accessibleIntro}</h2>
+      <article className={styles['note']}>{appPreviews.accessibilityIntro}</article>
       {appPreviews.sections.map(({ title, videos }) => (
         <section key={title} className={styles['section']}>
           <h2 className={styles['section__title']}>{title}</h2>
@@ -48,7 +74,7 @@ export default function ClearScore() {
                     data-testid={`video-${title}-${index}`}
                   >
                     <source src={filePath} />
-                    Your browser does not support the video tag.
+                    {appPreviews.notSupportedVideo}
                   </video>
                 ))}
               </li>
