@@ -53,13 +53,20 @@ describe('HomePage', () => {
           'href',
           _card.projectDestinationUrl,
         );
-        expect(card.getByRole('link', { name: _card.projectAriaLabel })).toHaveAttribute('target', '_blank');
-        expect(card.getByRole('link', { name: _card.projectAriaLabel })).toHaveAttribute('rel', 'noreferrer');
 
         expect(card.getByRole('link', { name: _card.iconAriaLabel })).toHaveAttribute('href', _card.iconDestinationUrl);
         expect(card.getByRole('link', { name: _card.iconAriaLabel })).toHaveAttribute('target', '_blank');
         expect(card.getByRole('link', { name: _card.iconAriaLabel })).toHaveAttribute('rel', 'noreferrer');
       });
+    });
+    it('should open the link to the project on the same tab when isSameTab is true', () => {
+      render(<HomePage />);
+
+      const sameTabProject = config.details.projects.items.find(({ isSameTab }) => isSameTab);
+      const { projectAriaLabel } = sameTabProject || {};
+
+      expect(screen.getByRole('link', { name: projectAriaLabel })).not.toHaveAttribute('target', '_blank');
+      expect(screen.getByRole('link', { name: projectAriaLabel })).not.toHaveAttribute('rel', 'noreferrer');
     });
   });
 });

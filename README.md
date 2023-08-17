@@ -1,5 +1,10 @@
 ## Software Design Choices
 
+### NEXT.JS
+
+Next.js offers built-in support for server-side rendering (SSR), static site generation (SSG), and incremental static regeneration (ISR). As my project grows in complexity, I have the flexibility to choose the rendering strategy that suits my needs, without the necessity to switch frameworks. Currently, the project requires only static site generation (SSG), but if the need arises to transition to server-side rendering (SSR) or incremental static regeneration (ISR), I can make the transition seamlessly without changing the underlying framework. Alongside these rendering strategies, Next.js also provides built in support for various development tools.
+
+
 ### Correct Semantic and HTML Structure
 
 Regardless of how your page looks, the HTML needs to follow specific criteria to provide a pleasant experience to end users, especially those with accessibility needs. CSS is a great tool to style elements and achieve the desired design while keeping the HTML structured proper.

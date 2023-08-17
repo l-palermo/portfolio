@@ -13,9 +13,11 @@ describe('Layout', () => {
       );
 
       expect(screen.getByRole('heading', { level: 1, name: config.headerGroup.header })).toBeVisible();
+      expect(screen.getByTestId('header-separator')).toBeInTheDocument();
       expect(screen.getByRole('heading', { level: 2, name: config.headerGroup.subHeader })).toBeVisible();
       expect(screen.getByText(config.headerGroup.description)).toBeVisible();
-      expect(screen.getByTestId('header-separator')).toBeInTheDocument();
+      expect(screen.getByRole('link', { name: config.headerGroup.resumeCta })).toHaveAttribute('href', '/resume.pdf');
+      expect(screen.getByRole('link', { name: config.headerGroup.resumeCta })).toHaveAttribute('target', '_blank');
     });
   });
   describe('Footer', () => {

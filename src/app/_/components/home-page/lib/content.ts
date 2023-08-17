@@ -8,6 +8,7 @@ const pageCopy = {
     header: 'luigi palermo',
     subHeader: 'frontend engineer',
     description: 'I build accessible, inclusive products and digital experiences for the web.',
+    resumeCta: 'View my resume'
   },
   footerAriaLabel: 'additional information',
   contacts: {
@@ -37,18 +38,9 @@ const pageCopy = {
   },
   details: {
     intro: [
-      {
-        skill:
-          'I build web applications encompassing all stages of the process, with a strong focus on delivering high-quality, accessible, well-tested and scalable front-end solutions.',
-      },
-      {
-        skill:
-          'Collaborate effectively within cross-functional teams, playing an active role in architectural discussions and contributing significantly to decision-making processes, fostering a unified and innovative approach.',
-      },
-      {
-        skill:
-          'Take an active mentoring role to support and empower junior team members, providing valuable code reviews and constructive feedback. Actively promote a culture of knowledge sharing, continuous learning, and collaboration.',
-      },
+      'I build <0>web applications</0> encompassing all stages of the process, with a strong focus on delivering <0>high-quality</0>, <0>accessible</0>, <0>well-tested</0> and <0>scalable</0> front-end solutions.',
+      'Collaborate effectively within <0>cross-functional teams</0>, playing an active role in <0>architectural discussions</0> and contributing significantly to decision-making processes, fostering a unified and innovative approach.',
+      'Take an active <0>mentoring role</0> to support and empower junior team members, providing valuable code reviews and <0>constructive feedback</0>. Actively promote a culture of <0>knowledge sharing</0>, continuous <0>learning</0>, and <0>collaboration</0>.',
     ],
     experiences: {
       title: 'Experiences',
@@ -63,38 +55,21 @@ const pageCopy = {
           ctaAriaLabel: 'Open details',
           destionationUrl: '/clearscore',
         },
-        {
-          startDate: '07 . 2020',
-          endDate: '10 . 2020',
-          role: 'Frontend engineer',
-          company: 'Ocyan',
-          description: 'Developed the onboarding UI and the new version of dashboard',
-          ctaAriaLabel: 'Open details',
-          destionationUrl: '/ocyan',
-        },
       ],
     },
     projects: {
       title: 'Projects',
       items: [
         {
-          name: 'Caturday',
-          description:
-            'Search for the latest trending memes and create a collection of your favourites. Reactm, Amplify, GraphQl',
-          Icon: GithubIcon,
-          iconDestinationUrl: 'https://github.com/l-palermo/react-amplify-app',
-          iconAriaLabel: 'Open on github',
-          projectAriaLabel: 'Open project',
-          projectDestinationUrl: 'https://caturday.uk',
-        },
-        {
           name: 'Portfolio',
-          description: 'This website, simple description on main tech design choices of this website',
+          description:
+            "This website is built using Next.JS, React, and CSS Modules. It's an ongoing project, and more content and features will be added over time.",
           Icon: GithubIcon,
           iconDestinationUrl: 'https://github.com/l-palermo/portfolio',
           iconAriaLabel: 'Open on github',
           projectAriaLabel: 'Open project',
           projectDestinationUrl: 'https://luigipalermo.com',
+          isSameTab: true,
         },
       ],
     },

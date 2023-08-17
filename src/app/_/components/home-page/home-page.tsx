@@ -3,15 +3,26 @@ import Link from 'next/link';
 import styles from './home-page.module.css';
 import pageCopy from './lib/content';
 import ArrowOutwardIcon from '../../../_/assets/icons/arrow-outward.svg';
+import interpolateString from '../../helpers/interpolate-strings/interpolate-string-with-components';
+import { ReactNode } from 'react';
 
+function HighlightText({ children, ...props }: { children?: ReactNode }) {
+  return (
+    <span className={styles['skill__detail']} {...props}>
+      {children}
+    </span>
+  );
+}
 export default function HomePage() {
   const { details } = pageCopy;
   return (
     <>
       <ul className={styles['list']}>
-        {details.intro.map(({ skill }) => (
+        {details.intro.map((skill) => (
           <li key={skill} className={styles['list__item']}>
-            <p className={styles['skill']}>{skill}</p>
+            <span className={styles['skill']}>
+              {interpolateString(skill, [{ Component: HighlightText }])}
+            </span>
           </li>
         ))}
       </ul>
@@ -63,8 +74,7 @@ export default function HomePage() {
                   <a
                     className={styles['project-card__content__link']}
                     href={project.projectDestinationUrl}
-                    target="_blank"
-                    rel="noreferrer"
+                    {...(project.isSameTab ? {} : { target: '_blank', rel: 'noopener noreferrer' })}
                   >
                     <p className={styles['visually-hidden-item']}>{project.projectAriaLabel}</p>
                   </a>

@@ -3,24 +3,73 @@
 }
 
 .link {
+  width: fit-content;
   display: flex;
   align-items: center;
-  gap: var(--spacing-16);
+  gap: var(--spacing-8);
   margin-bottom: var(--spacing-16);
+  transition: color 0.25s ease-in-out;
 
   @media (min-width: 512px) {
     margin-bottom: var(--spacing-48);
   }
 }
 
+.link:hover {
+  color: rgb(102 238 255);
+  text-decoration: underline;
+  text-underline-offset: var(--spacing-4);
+}
+
+.link:hover > .link__icon {
+  fill: rgb(102 238 255);
+  transform: translate(calc(-1 * var(--spacing-8)), 0);
+}
+
 .link__icon {
-  height: 1rem;
+  height: 1.25rem;
   fill: white;
+  transition:
+    transform 0.25s ease-in-out,
+    fill 0.25s ease-in-out;
 }
 
 .intro {
+  display: flex;
+  flex-wrap: wrap;
   font-size: var(--font-size-14);
   font-weight: 300;
+}
+
+.intro__text {
+  display: inline;
+  margin-top: var(--spacing-4);
+}
+
+.intro__link {
+  display: inline-flex;
+  color: white;
+  font-weight: 600;
+  transition: color 0.25s ease-in-out;
+}
+
+.intro__link:hover {
+  color: rgb(102 238 255);
+  text-decoration: underline;
+  text-underline-offset: var(--spacing-4);
+}
+
+.intro__link:hover > .intro__link__icon {
+  fill: rgb(102 238 255);
+  transform: translate(var(--spacing-4), calc(-1 * var(--spacing-4)));
+}
+
+.intro__link__icon {
+  width: 1rem;
+  fill: white;
+  transition:
+    translate 0.25s ease-in-out,
+    fill 0.25s ease-in-out;
 }
 
 .section {
@@ -35,10 +84,10 @@
   text-transform: uppercase;
 }
 
-.visually-hidden {
-  opacity: 0;
-  width: 0;
-  height: 0;
+.note {
+  margin-top: var(--spacing-64);
+  font-size: var(--font-size-12);
+  color: rgba(255, 255, 255, 0.8);
 }
 
 .list {
@@ -50,12 +99,18 @@
 
 .list__item-task {
   margin-left: var(--spacing-12);
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.list__item-task--highlight {
+  color: white;
+  font-weight: 600;
 }
 
 .list__item-video {
   display: flex;
   flex-wrap: wrap;
-  gap: var(--spacing-16);
+  gap: var(--spacing-8);
   justify-content: space-between;
   list-style: none;
 }
@@ -68,7 +123,7 @@
 }
 
 .list__item-video__description {
-  opacity: 0.7;
+  color: rgba(255, 255, 255, 0.8);
 }
 
 .video {
