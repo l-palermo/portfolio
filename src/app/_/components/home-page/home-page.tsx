@@ -20,9 +20,7 @@ export default function HomePage() {
       <ul className={styles['list']}>
         {details.intro.map((skill) => (
           <li key={skill} className={styles['list__item']}>
-            <span className={styles['skill']}>
-              {interpolateString(skill, [{ Component: HighlightText }])}
-            </span>
+            <span className={styles['skill']}>{interpolateString(skill, [{ Component: HighlightText }])}</span>
           </li>
         ))}
       </ul>
@@ -61,7 +59,11 @@ export default function HomePage() {
         <h2 className={styles['section__title']}>{details.projects.title}</h2>
         <ul className={styles['list']} aria-label={details.projects.title}>
           {details.projects.items.map((project) => (
-            <li key={project.name} className={`${styles['list__item']} ${styles['list__item--card']}`}>
+            <li
+              key={project.name}
+              className={`${styles['list__item']} ${styles['list__item--card']}`}
+              data-testid="project"
+            >
               <article className={styles['project-card']}>
                 <div className={styles['project-card__content']}>
                   <h3>{project.name}</h3>
@@ -71,6 +73,16 @@ export default function HomePage() {
                     data-testid="header-icon"
                   />
                   <p className={styles['project-card__content__description']}>{project.description}</p>
+                  <ul
+                    className={styles['project-card__content__technology__list']}
+                    aria-label={project.technologies.ariaLabel}
+                  >
+                    {project.technologies.items.map((technology) => (
+                      <li key={technology} className={styles['project-card__content__technology__list__item']}>
+                        {technology}
+                      </li>
+                    ))}
+                  </ul>
                   <a
                     className={styles['project-card__content__link']}
                     href={project.projectDestinationUrl}

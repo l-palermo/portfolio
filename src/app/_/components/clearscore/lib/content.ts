@@ -1,5 +1,6 @@
 const components = {
   TextLink: 'TextLink',
+  TextHighlight: 'TextHighlight',
 } as const;
 
 const pageCopy = {
@@ -20,7 +21,8 @@ const pageCopy = {
         text: 'During my time at ClearScore, I primarily focused on <0>DriveScore</0>.',
       },
       {
-        text: 'DriveScore is an application that offers insights into how to enhance driving skills and contribute to saving money on insurance premiums. As the sole frontend developer in the team, I assumed responsibility for all frontend and JavaScript-related tasks.',
+        components: [{ componentId: components.TextHighlight }],
+        text: 'DriveScore is an application that offers insights into how to enhance driving skills and contribute to saving money on insurance premiums. As the <0>sole frontend developer</0> in the team, I assumed responsibility for all frontend and JavaScript-related tasks.',
       },
     ],
   },
@@ -38,6 +40,32 @@ const pageCopy = {
       'Led research and seamless <0>integration of user-friendly tools</0>, like <0>haedles CMS (Conentful)</0>, empowering the team to efficiently deliver value and quality to users.',
       'Applied <0>critical thinking</0> skills to evaluate existing features, identifying areas for improvement and employing refactoring techniques to optimize <0>code efficiency</0> and <0>readability</0>.',
       'Demonstrated a strong work ethic by taking <0>full ownership of the feature lifecycle</0>, encompassing development, testing, deployment, and proactive monitoring.',
+    ],
+  },
+  technologies: {
+    title: 'Technologies',
+    items: [
+      'Javascript',
+      'Typescript',
+      'React',
+      'Redux',
+      'React Query',
+      'Node.js',
+      'Fastify',
+      'Next.js',
+      'Gatsby',
+      'CSS',
+      'PostCSS',
+      'Storybook',
+      'Figma',
+      'Jest',
+      'React Testing Library',
+      'Cypress',
+      'Sentry',
+      'SignalFx',
+      'Grafana',
+      'Terraform',
+      'Jenkins',
     ],
   },
   appPreviews: {
