@@ -8,7 +8,7 @@ const pageCopy = {
     header: 'luigi palermo',
     subHeader: 'frontend engineer',
     description: 'I build accessible, inclusive products and digital experiences for the web.',
-    resumeCta: 'View my resume'
+    resumeCta: 'View my resume',
   },
   footerAriaLabel: 'additional information',
   contacts: {
@@ -54,6 +54,7 @@ const pageCopy = {
             'Developed the frontend and everything JavaScript for a greenfield project "DriveScore," working within a hybrid approach that combined Agile, Extreme Programming (XP), Kanban, and Lean methodologies.',
           ctaAriaLabel: 'Open details',
           destionationUrl: '/clearscore',
+          technologies: ['React', 'Typescript', 'Node.js', 'Fastify', 'PostCSS', 'Gatsby'],
         },
       ],
     },
@@ -61,6 +62,7 @@ const pageCopy = {
       title: 'Projects',
       items: [
         {
+          title: 'project',
           name: 'Portfolio',
           description:
             "This website is built using Next.JS, React, and CSS Modules. It's an ongoing project, and more content and features will be added over time.",
@@ -70,7 +72,8 @@ const pageCopy = {
           projectAriaLabel: 'Open project',
           projectDestinationUrl: 'https://luigipalermo.com',
           isSameTab: true,
-        },
+          technologies: { ariaLabel: 'technologies', items: ['React', 'Typescript', 'Next.js', 'PostCSS', 'Figma'] },
+        }
       ],
     },
   },

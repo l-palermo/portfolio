@@ -7,7 +7,7 @@ import ArrowBackIcon from '../../assets/icons/arrow-back.svg';
 import ArrowOutwardIcon from '../../assets/icons/arrow-outward.svg';
 import interpolateStringWithComponents from '../../helpers/interpolate-strings';
 
-function HighlightText({ children }: { children?: ReactNode }) {
+function TextHighlight({ children }: { children?: ReactNode }) {
   return <span className={styles['list__item-task--highlight']}>{children}</span>;
 }
 
@@ -22,14 +22,15 @@ function TextLink({ children, ...props }: { children?: ReactNode }) {
 
 const componentMap = {
   TextLink,
+  TextHighlight,
 };
 
-function mapComponents(components?: { componentId: keyof typeof componentMap; props: Record<string, string> }[]) {
+function mapComponents(components?: { componentId: keyof typeof componentMap; props?: Record<string, string> }[]) {
   return components?.map(({ componentId, props }) => ({ Component: componentMap[componentId], props }));
 }
 
 export default function ClearScore() {
-  const { intro, roleSummary, backNavigation, appPreviews } = pageContent;
+  const { intro, roleSummary, backNavigation, appPreviews, technologies } = pageContent;
   return (
     <div className={styles['container']}>
       <Link href={backNavigation.path} className={styles['link']}>
@@ -49,7 +50,19 @@ export default function ClearScore() {
           {roleSummary.tasks.map((task) => {
             return (
               <li key={task} className={styles['list__item-task']}>
-                {interpolateStringWithComponents(task, [{ Component: HighlightText }])}
+                {interpolateStringWithComponents(task, [{ Component: TextHighlight }])}
+              </li>
+            );
+          })}
+        </ul>
+      </section>
+      <section className={styles['section']}>
+        <h2 className={styles['section__title']}>{technologies.title}</h2>
+        <ul className={`${styles['list']} ${styles['list--technologies']}`} aria-label={technologies.title}>
+          {technologies.items.map((technology) => {
+            return (
+              <li key={technology} className={styles['list__item-technology']}>
+                {technology}
               </li>
             );
           })}

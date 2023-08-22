@@ -17,7 +17,7 @@ describe('ClearScore', () => {
 
     const { ariaLabel, items } = pageCopy.intro;
     const linkLabel = items[0].text.split(INTERPLAION_SYMBOLS_REGEX)[1];
-    const linkProps = items[0].components?.[0].props;
+    const { props } = 'props' in items[0].components?.[0] || ({} as any);
     const introLines = screen.getAllByTestId('intro-line');
 
     expect(screen.getByRole('article', { name: ariaLabel })).toBeVisible();
@@ -25,9 +25,9 @@ describe('ClearScore', () => {
     introLines.forEach((paragraph, index) => {
       expect(paragraph).toHaveTextContent(items[index].text.replaceAll(INTERPLAION_SYMBOLS_REGEX, ''));
     });
-    expect(screen.getByRole('link', { name: linkLabel })).toHaveAttribute('href', linkProps?.href);
-    expect(screen.getByRole('link', { name: linkLabel })).toHaveAttribute('target', linkProps?.target);
-    expect(screen.getByRole('link', { name: linkLabel })).toHaveAttribute('rel', linkProps?.rel);
+    expect(screen.getByRole('link', { name: linkLabel })).toHaveAttribute('href', props?.href);
+    expect(screen.getByRole('link', { name: linkLabel })).toHaveAttribute('target', props?.target);
+    expect(screen.getByRole('link', { name: linkLabel })).toHaveAttribute('rel', props?.rel);
   });
   it('should render the tasks', () => {
     render(<ClearScore />);
@@ -39,6 +39,18 @@ describe('ClearScore', () => {
     expect(allTasks.length).toBe(tasks.length);
     allTasks.forEach((task, index) => {
       expect(task).toHaveTextContent(tasks[index].replaceAll(INTERPLAION_SYMBOLS_REGEX, ''));
+    });
+  });
+  it('should render the technologies section', () => {
+    render(<ClearScore />);
+    const { technologies } = pageCopy;
+
+    const list = screen.getByRole('list', { name: technologies.title });
+    const technologyItems = within(list).getAllByRole('listitem');
+
+    expect(technologyItems.length).toBe(technologies.items.length);
+    technologyItems.forEach((technology, index) => {
+      expect(technology).toHaveTextContent(technologies.items[index]);
     });
   });
   it('should render an acessible intro to the app preview section', () => {
