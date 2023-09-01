@@ -81,14 +81,14 @@ const pageCopy = {
             description:
               'A user completes the login form and demonstrates that the email undergoes field-level validation. Upon clicking "Continue," they successfully log into the DriveScore web app and are subsequently redirected to the DriveScore dashboard. The DriveScore dashboard is segmented into three sections. The top section is dedicated to obtaining insurance quotes, displaying a header, a description, and a button labelled "Get a Quote." The middle section pertains to the user\'s score, presenting a brief description of the user\'s score along with an animated speedometer that showcases the score. The bottom section guides the user to download the mobile app, providing a web-based QR code for the download.',
             isPortrait: false,
-            filePaths: ['videos/clearscore/drivescore-webapp-login.mp4'],
+            filePaths: ['https://videos.ctfassets.net/66i3mz6tlbxo/2QfpWuCGXm32YFdtFXv80i/7cb46cafca0012f19f748e967095a996/drivescore-webapp-login.mp4'],
           },
           {
             title: 'Insurance Form and PLP/PDP',
             description:
               "A user navigates to the summary of the insurance form and proceeds through the form sections to review their details. They first navigate to the car section, then the driver's section, and finally the cover section. After showcasing field validation and search functionalities of the form, they proceed by clicking on 'Get a Quote,' which leads them to the product list page. On this page, a variety of products are displayed, along with options to refine the search results. Ultimately, the user makes a selection by choosing a specific product. This selection then redirects them to the product details page.",
             isPortrait: false,
-            filePaths: ['videos/clearscore/drivescore-webapp-form.mp4'],
+            filePaths: ['https://videos.ctfassets.net/66i3mz6tlbxo/6AnRhE66g6Trot20Cainwp/1e653da6f9cf5bd873fc6f3ce09c8040/drivescore-webapp-form.mp4'],
           },
         ],
       },
@@ -100,7 +100,7 @@ const pageCopy = {
             description:
               'A user arrives at the ClearScore homepage and subsequently clicks on the DriveScore Hub icon located in the top navigation. This action redirects them to the DriveScore Hub, where the aforementioned DriveScore dashboard is displayed. Following this, the user clicks on "Get a Quote" and is directed to the summary page of the insurance quote form. From there, they navigate to the offers page, select "Car Insurance," and demonstrate that this link also leads to the insurance quote summary page.',
             isPortrait: false,
-            filePaths: ['videos/clearscore/drivescore-in-clearscore-webapp.mp4'],
+            filePaths: ['https://videos.ctfassets.net/66i3mz6tlbxo/7eLTq2mDAcvyuqPILSBUsF/3942f6924109715707ce0cb6a85a885c/drivescore-in-clearscore-webapp.mp4'],
           },
         ],
       },
@@ -113,8 +113,8 @@ const pageCopy = {
               'The following videos respectively depict a user logging in via a magic link and via credentials. In the magic link scenario, the user only needs to input their email address, and upon submission, an email is dispatched to their inbox containing a link embedded with a specific app-generated token. Clicking on the link within the email redirects the user to the app and automatically logs them in. In the credentials scenario, the user disregards the email and instead opts to click on the "Login with Credentials" call-to-action. This action redirects them to the conventional login page, where the email is pre-filled, and the browser automatically populates the password. Following this, they click "Continue" and are consequently logged into the app.',
             isPortrait: true,
             filePaths: [
-              'videos/clearscore/drivescore-magic-login.mp4',
-              'videos/clearscore/drivescore-credentials-login.mp4',
+              'https://videos.ctfassets.net/66i3mz6tlbxo/1i0sP0kCwwXsHZeg64PCIE/c8be438161f49c1da2855ad8149524cc/drivescore-magic-login.mp4',
+              'https://videos.ctfassets.net/66i3mz6tlbxo/52lseNVkpu8evgSYaAm6Rb/0e37a37025fce21401016c5113d938bc/drivescore-credentials-login.mp4',
             ],
           },
         ],
