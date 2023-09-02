@@ -18,12 +18,16 @@ const pageCopy = {
             props: { href: 'https://drivescore.com', target: '_blank', rel: 'noopener noreferrer' },
           },
         ],
-        text: 'During my time at ClearScore, I primarily focused on <0>DriveScore</0>.',
+        text: 'During my tenure at ClearScore, my primary focus was on a new product called <0>DriveScore</0>.',
       },
       {
         components: [{ componentId: components.TextHighlight }],
         text: 'DriveScore is an application that offers insights into how to enhance driving skills and contribute to saving money on insurance premiums. As the <0>sole frontend developer</0> in the team, I assumed responsibility for all frontend and JavaScript-related tasks.',
       },
+      {
+        components: [{ componentId: components.TextHighlight }],
+        text: "Before joining DriveScore, I worked on the design system team, where I constructed <0>accessible components</0> for the <0>ClearScore Design System</0>. Subsequently, I joined the Resolve team and created the <0>COVID Hub</0>, a section of the app to keep our users informed about the latest news regarding how the COVID outbreak was impacting the UK's financial environment."
+      }
     ],
   },
   roleSummary: {
@@ -63,6 +67,7 @@ const pageCopy = {
       'Cypress',
       'Sentry',
       'SignalFx',
+      'Datadog',
       'Grafana',
       'Terraform',
       'Jenkins',
@@ -73,6 +78,20 @@ const pageCopy = {
       'Note: The following sections consist of screen recordings of the apps, which do not include sound or captions at this time. However, audio and captions will be provided in the near future. To ensure accessibility to video content, a brief description will be provided for each video, and the video itself will be hidden from the screen reader.',
     notSupportedVideo: 'Your browser does not support the video tag.',
     sections: [
+      {
+        title: 'Website',
+        videos: [
+          {
+            title: 'DriveScore website overview',
+            description:
+              "The user navigates to drivescore.com, scrolls down the page, and views several explanatory sections on how the app works, its features, and how they can use it to save money. The user then clicks on 'Partner with Us,' where we provide a form for potential partners to get in touch with us. Finally, the user clicks on 'Login,' which redirects them to the web app.",
+            isPortrait: false,
+            filePaths: [
+              'https://videos.ctfassets.net/66i3mz6tlbxo/470yygqMTiTAiGMbzZQDAn/7946709b835f1ebb1f6fc0d7d165fbae/drivescore-website.mp4',
+            ],
+          },
+        ],
+      },
       {
         title: 'Drivescore webapp',
         videos: [
@@ -118,7 +137,7 @@ const pageCopy = {
             ],
           },
         ],
-      },
+      }
     ],
   },
 };
