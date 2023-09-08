@@ -75,7 +75,7 @@ const pageCopy = {
   },
   appPreviews: {
     accessibilityIntro:
-      'Note: The following sections consist of screen recordings of the apps, which do not include sound or captions at this time. However, audio and captions will be provided in the near future. To ensure accessibility to video content, a brief description will be provided for each video, and the video itself will be hidden from the screen reader.',
+      'Note: The following sections consist of screen recordings of the apps, which do not include sound or captions at this time. However, audio and captions will be provided in the near future. To ensure accessibility to video content, a brief description will be provided for each video.',
     notSupportedVideo: 'Your browser does not support the video tag.',
     sections: [
       {
