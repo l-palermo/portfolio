@@ -26,14 +26,14 @@ const pageCopy = {
       },
       {
         components: [{ componentId: components.TextHighlight }],
-        text: "Before joining DriveScore, I worked on the design system team, where I constructed <0>accessible components</0> for the <0>ClearScore Design System</0>. Subsequently, I joined the Resolve team and created the <0>COVID Hub</0>, a section of the app to keep our users informed about the latest news regarding how the COVID outbreak was impacting the UK's financial environment."
+        text: "Before joining DriveScore, I worked on the <0>design system</0> team, where I constructed <0>accessible components</0> for the <0>ClearScore Design System</0>. Subsequently, I joined the Resolve team and created the <0>COVID Hub</0>, a section of the app to keep our users informed about the latest news regarding how the COVID outbreak was impacting the UK's financial environment."
       }
     ],
   },
   roleSummary: {
     title: 'Highlights',
     tasks: [
-      'Indepenendently built the <0>insurance journey</0>,consisting of a <0>67 fields</0> form with cross filed <0>conditional logic validation</0>, <0>products list</0> and <0>products details</0> page for both mobile platform (webviews) and desktop.',
+      'Indepenendently built the <0>insurance journey</0>,consisting of a <0>67 fields</0> form with cross filed <0>conditional logic validation</0>, <0>products list</0> and <0>products details</0> page for both <0>mobile platform</0> (webviews) and <0>desktop</0>.',
       'Thanks to the <0>Micro Frontend Architecture</0> the application of <0>SOLID programming principles</0>, I have enabled the seemless deployment of the DriveScore pages to different platforms, including the main ClearScore product.',
       'Utilized the <0>Backend for Frontend</0> pattern to <0>reduce client logic</0>, leading to enhanced user experience and improved application performances.',
       'I used the <0>trophy testing strategy</0> to thoroughly test the application and its features. This included different types of tests like <0>E2E</0>, <0>integration</0>, and <0>unit tests</0>. This approach ensures complete coverage and efficient testing.',
@@ -43,7 +43,7 @@ const pageCopy = {
       '<0>Maximized use of CSS</0> to effectively reduce image size and optimize page loading time enhancing overall web performance',
       'Led research and seamless <0>integration of user-friendly tools</0>, like <0>haedles CMS (Conentful)</0>, empowering the team to efficiently deliver value and quality to users.',
       'Applied <0>critical thinking</0> skills to evaluate existing features, identifying areas for improvement and employing refactoring techniques to optimize <0>code efficiency</0> and <0>readability</0>.',
-      'Demonstrated a strong work ethic by taking <0>full ownership of the feature lifecycle</0>, encompassing development, testing, deployment, and proactive monitoring.',
+      'Demonstrated a strong work ethic by taking <0>full ownership of the feature lifecycle</0>, encompassing development, testing, deployment, and <0>proactive monitoring</0>.',
     ],
   },
   technologies: {
@@ -58,6 +58,7 @@ const pageCopy = {
       'Fastify',
       'Next.js',
       'Gatsby',
+      'SVG',
       'CSS',
       'PostCSS',
       'Storybook',
