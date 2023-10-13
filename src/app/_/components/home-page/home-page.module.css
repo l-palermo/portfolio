@@ -46,10 +46,6 @@
 .skill {
   font-size: var(--font-size-14);
   color: var(--color-white-alpha-80);
-
-  @media (min-width: 512px) {
-    font-size: var(--font-size-16);
-  }
 }
 
 .skill__detail {
@@ -91,6 +87,12 @@
   gap: var(--spacing-4);
   width: 100%;
   fill: var(--color-white);
+}
+
+.experience-card__content > h3 {
+  text-decoration: underline;
+  text-underline-offset: var(--spacing-4);
+  text-decoration-color: var(--color-white-alpha-80);
 }
 
 .experience-card__content__icon {
@@ -185,6 +187,12 @@
   @media (min-width: 768px) {
     padding: var(--spacing-24) var(--spacing-16) var(--spacing-24) var(--spacing-8);
   }
+}
+
+.project-card__content > h3 {
+  text-decoration: underline;
+  text-underline-offset: var(--spacing-4);
+  text-decoration-color: var(--color-white-alpha-80);
 }
 
 .project-card__content:hover > *:not(.project-card__content__technology__list) {
