@@ -1,3 +1,3 @@
-import ClearScore from '../../_/components/clearscore';
+import ClearScore from '../../_/pages/clearscore';
 
 export default ClearScore;
