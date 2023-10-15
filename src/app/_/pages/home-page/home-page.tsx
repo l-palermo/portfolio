@@ -1,10 +1,11 @@
+import { ReactNode } from 'react';
 import Link from 'next/link';
+import { headers } from 'next/headers';
 
 import styles from './home-page.module.css';
 import pageCopy from './lib/content';
 import ArrowOutwardIcon from '../../../_/assets/icons/arrow-outward.svg';
 import interpolateString from '../../helpers/interpolate-strings/interpolate-string-with-components';
-import { ReactNode } from 'react';
 
 function HighlightText({ children, ...props }: { children?: ReactNode }) {
   return (
@@ -15,6 +16,9 @@ function HighlightText({ children, ...props }: { children?: ReactNode }) {
 }
 export default function HomePage() {
   const { details } = pageCopy;
+  const headersList = headers();
+  const userAgent = headersList.get('User-Agent');
+  const isMobile = userAgent?.includes('Mobile');
   return (
     <>
       <ul className={styles['list']}>
@@ -47,7 +51,12 @@ export default function HomePage() {
                     <p>{experience.endDate}</p>
                   </div>
                 </aside>
-                <Link className={styles['experience-card__link']} href={experience.destionationUrl}>
+                <Link
+                  className={`${styles['experience-card__link']} ${
+                    isMobile ? styles['experience-card__link--mobile'] : ''
+                  }`}
+                  href={experience.destionationUrl}
+                >
                   <p className={styles['visually-hidden-item']}>{experience.ctaAriaLabel}</p>
                 </Link>
               </article>
@@ -65,7 +74,11 @@ export default function HomePage() {
               data-testid="project"
             >
               <article className={styles['project-card']}>
-                <div className={styles['project-card__content']}>
+                <div
+                  className={`${styles['project-card__content']} ${
+                    isMobile ? styles['project-card__content--mobile'] : ''
+                  }`}
+                >
                   <h3>{project.name}</h3>
                   <ArrowOutwardIcon
                     className={styles['project-card__content__header__icon']}

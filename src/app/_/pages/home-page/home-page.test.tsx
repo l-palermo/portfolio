@@ -3,6 +3,8 @@ import { render, screen, within } from '@testing-library/react';
 import HomePage from '.';
 import config from './lib/content';
 
+jest.mock('next/headers', () => ({ headers: () => ({ get: jest.fn() }) }));
+
 describe('HomePage', () => {
   describe('Experiences section', () => {
     it('should render the title', () => {
