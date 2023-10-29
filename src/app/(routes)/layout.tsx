@@ -8,6 +8,7 @@ import { Layout } from '../_/pages/home-page';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://portfolio-git-update-next-l-palermo.vercel.app'),
   title: 'Luigi Palermo Portfolio',
   description: 'I build accessible, inclusive products for the web',
 };
