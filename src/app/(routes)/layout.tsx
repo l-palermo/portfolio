@@ -7,10 +7,23 @@ import { Layout } from '../_/pages/home-page';
 
 const inter = Inter({ subsets: ['latin'] });
 
+const title = 'Luigi Palermo Portfolio';
+const description = 'I build accessible, inclusive products for the web';
+const imageUrl =
+  'https://images.ctfassets.net/66i3mz6tlbxo/6KE4OKYbb1VUALNiO6M417/36139a3d69e08d5ef97f1f19ccdb258d/Screenshot_2023-10-29_at_21.30.30.png';
+
 export const metadata: Metadata = {
-  metadataBase: new URL('https://portfolio-git-update-next-l-palermo.vercel.app'),
-  title: 'Luigi Palermo Portfolio',
-  description: 'I build accessible, inclusive products for the web',
+  title,
+  description,
+  openGraph: {
+    type: 'website',
+    url: 'https://luigipalermo.com',
+    title,
+    description,
+    siteName: 'Luigi Palermo - Portfolio',
+    images: [{ url: imageUrl }],
+  },
+  twitter: { card: 'summary_large_image', site: '@site', creator: '@creator', images: imageUrl },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
