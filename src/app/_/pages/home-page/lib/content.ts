@@ -1,4 +1,3 @@
-import TelephoneIcon from '../../../../_/assets/icons/telephone.svg';
 import MailIcon from '../../../../_/assets/icons/mail.svg';
 import LinkedinIcon from '../../../../_/assets/icons/linkedin-logo.svg';
 import GithubIcon from '../../../../_/assets/icons/github-logo.svg';
@@ -14,11 +13,6 @@ const pageCopy = {
   contacts: {
     ariaLabel: 'contact details',
     items: [
-      {
-        Icon: TelephoneIcon,
-        href: 'tel:+447490393368',
-        ariaLabel: 'phone number',
-      },
       {
         Icon: MailIcon,
         href: 'mailto:l-palermo@hotmail.it',
