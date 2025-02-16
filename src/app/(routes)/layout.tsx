@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import { Analytics } from '@vercel/analytics/react';
 
-import { Layout } from '../_/pages/home-page';
+import { Layout } from '../_/page-module';
 
 const inter = Inter({ subsets: ['latin'] });
 

@@ -1,3 +1,3 @@
-import HomePage from '../_/pages/home-page';
+import { Page } from '../_/page-module/page';
 
-export default HomePage;
+export default Page;

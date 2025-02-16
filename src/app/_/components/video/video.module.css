@@ -1,0 +1,12 @@
+.video {
+  height: 100%;
+  border-radius: var(--border-radius-8);
+
+  &:last-child {
+    margin-left: 1rem;
+  }
+
+  &:first-child {
+    margin-left: 0;
+  }
+}

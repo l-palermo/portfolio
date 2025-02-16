@@ -1,0 +1,32 @@
+.footer {
+  position: relative;
+  padding: 0 var(--spacing-16);
+  margin-top: var(--spacing-40);
+
+  @media (min-width: 1024px) {
+    align-self: self-start;
+    margin-top: auto;
+  }
+}
+
+.footer__header {
+  display: inlines;
+  font-size: var(--font-size-12);
+  font-weight: 400;
+  text-transform: uppercase;
+  margin-bottom: var(--spacing-12);
+
+  @media (min-width: 1024px) {
+    display: none;
+  }
+}
+
+.footer__contacts > span {
+  padding: 0;
+}
+
+.footer__contacts > span > span {
+  display: flex;
+  align-items: flex-end;
+  gap: var(--spacing-16);
+}
