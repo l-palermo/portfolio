@@ -10,7 +10,11 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [20.x]
+        node-version: [22.x]
+    env:
+      CMS_SPACE: ${{ secrets.CMS_SPACE }}
+      CMS_ACCESS_TOKEN: ${{ secrets.CMS_ACCESS_TOKEN }}
+      CMS_HOST: ${{ secrets.CMS_HOST }}
     steps:
       - uses: actions/checkout@v3
       - name: Use Node.js ${{ matrix.node-version }}
