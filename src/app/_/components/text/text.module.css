@@ -1,0 +1,63 @@
+.text {
+  width: 100%;
+}
+
+.sentiment_primary {
+  color: var(--color-white);
+}
+
+.sentiment_primary_faded {
+  color: var(--color-white-alpha-80);
+}
+
+.sentiment_secondary {
+  color: var(--color-light-ciano);
+}
+
+.sentiment_secondary_faded {
+  color: var(--color-light-ciano-alpha-5);
+}
+
+.variant_heading1 {
+  font-size: var(--fonti-size-36);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.variant_heading2 {
+  font-size: var(--font-size-24);
+  font-weight: 700;
+  line-height: 1.2;
+}
+.variant_heading3 {
+  font-size: var(--font-size-20);
+  font-weight: 700;
+  line-height: 1.2;
+}
+.variant_heading4 {
+  font-size: var(--font-size-16);
+  font-weight: 700;
+  line-height: 1.2;
+}
+.variant_heading5 {
+  font-size: var(--font-size-14);
+  font-weight: 700;
+  line-height: 1.2;
+}
+.variant_heading6 {
+  font-size: var(--font-size-12);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.variant_body {
+  font-size: var(--font-size-14);
+  font-weight: 300;
+  line-height: 1.5;
+}
+
+.variant_bodyBold {
+  font-size: var(--font-size-14);
+  font-weight: 500;
+  line-height: 1.5;
+}
