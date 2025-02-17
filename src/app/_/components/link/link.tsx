@@ -26,9 +26,10 @@ function LinkInner({ url, label, icon, iconOnly, reverse, opensInNewTab }: LinkP
     <NextLink
       className={cx(styles['link'], { [styles['link_list_icon']]: iconOnly, [styles['link_reverse']]: reverse })}
       href={url}
+      aria-label={label}
       {...(opensInNewTab ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
     >
-      <span>{label}</span>
+      {!iconOnly ? <span>{label}</span> : null}
       <Svg src={icon.fields.file.url} aria-hidden data-testid={'link-icon'} />
     </NextLink>
   );
@@ -44,5 +45,4 @@ export function Link({ url, label, icon, iconOnly, reverse, isItemList, opensInN
     );
   }
   return <LinkInner {...props} />;
-}
-``
+};

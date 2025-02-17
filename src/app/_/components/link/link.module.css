@@ -3,15 +3,10 @@
   width: fit-content;
   display: flex;
   gap: var(--spacing-8);
-  /* margin-top: var(--spacing-32); */
   font-size: var(--font-size-16);
   transition:
     text-decoration 0.25s ease-in-out,
     color 0.25s ease-in-out;
-
-  @media (min-width: 1024px) {
-    /* margin-top: var(--spacing-64); */
-  }
 }
 
 .link > svg {
@@ -74,4 +69,5 @@
   height: 0;
   position: absolute;
   inset: 0;
+  font-size: 0;
 }
