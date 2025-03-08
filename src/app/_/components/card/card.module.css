@@ -80,11 +80,16 @@
 .card__aside {
   position: absolute;
   right: 0;
-  font-size: var(--font-size-10);
+  font-size: var(--font-size-8);
   width: 100%;
   max-width: 30%;
   display: flex;
-  justify-content: flex-end; 
+  justify-content: flex-end;
+  z-index: 1;
+
+  @media (min-width: 512px) {
+    font-size: var(--font-size-14);
+  }
 
   @media (min-width: 768px) {
     display: block;
@@ -100,6 +105,7 @@
   align-items: center;
   white-space: nowrap;
   justify-content: flex-end;
+  line-height: 2.5;
 
   @media (min-width: 768px) {
     justify-content: flex-start;
