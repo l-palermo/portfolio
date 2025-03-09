@@ -17,8 +17,8 @@
   }
 
   @media (min-width: 768px) {
-    padding: var(--spacing-16);
     flex-direction: row-reverse;
+    padding: var(--spacing-16);
     padding: var(--spacing-24) 0;
   }
 }
@@ -85,7 +85,6 @@
   max-width: 30%;
   display: flex;
   justify-content: flex-end;
-  z-index: 1;
 
   @media (min-width: 512px) {
     font-size: var(--font-size-14);
@@ -98,6 +97,10 @@
     font-size: var(--font-size-14);
     right: var(--spacing-16);
   }
+}
+
+.card__aside-project {
+  z-index: 1;
 }
 
 .card__aside__date {

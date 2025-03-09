@@ -1,8 +1,9 @@
 import { fetchContentful } from '../helpers/fetch-contentful';
 import { COMPONENT_MAP } from '../components';
 
-export async function Page({ params }: { params: { path?: string } }) {
-  const data = await fetchContentful({ content_type: 'appSection', 'fields.id': params.path || '/' });
+export async function Page({ params }: { params: Promise<{ path?: string }> }) {
+  const { path } = await params
+  const data = await fetchContentful({ content_type: 'appSection', 'fields.id': path || '/' });
   const fields = data[0].fields.fields;
 
   return (

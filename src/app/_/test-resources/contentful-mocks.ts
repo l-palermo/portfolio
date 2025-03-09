@@ -1,3 +1,5 @@
+import { Asset } from 'contentful';
+
 export const entryCollectionMock = [
   {
     sys: {
@@ -5,6 +7,7 @@ export const entryCollectionMock = [
       type: 'Entry' as const,
       createdAt: '2023-01-01T00:00:00Z' as const,
       updatedAt: '2023-01-01T00:00:00Z' as const,
+      publishedVersion: 1,
       environment: {
         sys: {
           id: 'env-id',
@@ -78,6 +81,7 @@ export const entryCollectionMock = [
       type: 'Entry' as const,
       createdAt: '2023-01-01T00:00:00Z' as const,
       updatedAt: '2023-01-01T00:00:00Z' as const,
+      publishedVersion: 1,
       environment: {
         sys: {
           id: 'env-id',
@@ -147,12 +151,13 @@ export const entryCollectionMock = [
   },
 ];
 
-export const assetMock = {
+export const assetMock: Asset = {
   sys: {
     id: '1',
     type: 'Asset' as const,
     createdAt: '2021-01-01T00:00:00Z' as `${number}-${number}-${number}T${number}:${number}:${number}Z`,
     updatedAt: '2021-01-01T00:00:00Z' as `${number}-${number}-${number}T${number}:${number}:${number}Z`,
+    publishedVersion: 1,
     space: {
       sys: {
         id: 'spaceId',

@@ -69,7 +69,7 @@ export function Card({
   }, []);
 
   return (
-    <article className={cx(styles['card'], styles.banana)}>
+    <article className={styles['card']}>
       <div className={styles['card__content']}>
         <h3 className={styles['card__content__title']}>{title}</h3>
         <Svg className={styles['card__content__icon']} src={titleIcon.fields.file.url} aria-hidden />
@@ -77,7 +77,7 @@ export function Card({
         <p className={styles['card__content__description']}>{description}</p>
         {fields?.fields.technologies ? <PillList technologies={fields?.fields.technologies} /> : null}
       </div>
-      <aside className={styles['card__aside']}>
+      <aside className={cx(styles['card__aside'], { [styles['card__aside-project']]: type === 'project' })}>
         {type === 'experience' ? <ExperienceDates startDate={startDate} endDate={endDate} /> : null}
         {type === 'project' ? <Link {...projectGithubLink.fields} /> : null}
       </aside>

@@ -50,7 +50,8 @@
   --color-white-alpha-80: rgba(255, 255, 255, 0.8);
   --color-light-ciano: rgb(102 238 255);
   --color-light-ciano-alpha-5: rgba(0, 255, 255, 0.05);
-  --color-dark-blue: rgb(0 33 58);
+  --color-dark-blue: rgb(0, 33, 58);
+  --color-light-blue: rgb(0, 38, 66);  
 }
 
 ::selection {
@@ -71,6 +72,7 @@ body {
 }
 
 body {
+  width: 100%;
   color: rgb(var(--foreground-rgb));
   background-color: rgb(0 33 58);
 }

@@ -5,7 +5,7 @@ import { Analytics } from '@vercel/analytics/react';
 
 import { Layout } from '../_/page-module';
 
-const inter = Inter({ subsets: ['latin'] });
+const inter = Inter({ subsets: ['latin'], preload: true });
 
 const title = 'Luigi Palermo Portfolio';
 const description = 'I build accessible, inclusive products for the web';

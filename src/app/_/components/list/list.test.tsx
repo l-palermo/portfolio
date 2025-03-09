@@ -1,7 +1,6 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 
-import '@testing-library/jest-dom/extend-expect';
 import { List } from './list';
 
 describe('List Component', () => {
@@ -18,7 +17,7 @@ describe('List Component', () => {
   it('renders the list items with correct text', () => {
     render(<List {...mockListProps} />);
 
-    expect(screen.getByText('Item 1')).toBeInTheDocument();
-    expect(screen.getByText('Item 2')).toBeInTheDocument();
+    expect(screen.getByText('Item 1')).toBeVisible();
+    expect(screen.getByText('Item 2')).toBeVisible();
   });
 });
