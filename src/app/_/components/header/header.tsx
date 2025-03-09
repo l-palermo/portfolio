@@ -12,7 +12,9 @@ export function Header({ name, role, description }: HeaderProps) {
   return (
     <hgroup className={styles['header-group']}>
       <h1 className={styles['header']}>{name}</h1>
-      <div className={styles['separator--header']} data-testid="header-separator" />
+      <div className={styles['header-separator']} data-testid="header-separator" >
+        <div className={styles['separator']} />
+      </div>
       <h2 className={styles['subheader']}>{role}</h2>
       <p className={styles['description']}>{description}</p>
     </hgroup>

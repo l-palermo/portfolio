@@ -2,13 +2,13 @@ import { RefObject, useEffect, useRef } from 'react';
 
 import styles from './background.module.css';
 
-const handleMouseMove = (ref: RefObject<HTMLDivElement>) => (e: MouseEvent) => {
+const handleMouseMove = (ref: RefObject<HTMLDivElement | null>) => (e: MouseEvent) => {
   const x = e.clientX / window.innerWidth;
   const y = e.clientY / window.innerHeight;
 
   ref.current?.style.setProperty(
     'background',
-    `radial-gradient(at ${x * 100}% ${y * 100}%, var(--color-light-ciano-alpha-5) 0%, var(--color-dark-blue) 100%)`,
+    `radial-gradient(at ${x * 100}% ${y * 100}%, var(--color-light-blue) 0%, var(--color-dark-blue) 100%)`,
   );
 };
 

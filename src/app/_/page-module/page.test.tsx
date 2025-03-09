@@ -15,12 +15,12 @@ describe('Page', () => {
   });
   describe('Experiences section', () => {
     it('should render the title', async () => {
-      render(await Page({ params: {} }));
+      render(await Page({ params: Promise.resolve({}) }));
 
       expect(await screen.findByRole('heading', { level: 2, name: 'Experiences' })).toBeVisible();
     });
     it('should render the experiences with the right content', async () => {
-      render(await Page({ params: {} }));
+      render(await Page({ params: Promise.resolve({}) }));
 
       const list = await screen.findAllByRole('list');
       expect(list).toHaveLength(3);
@@ -43,12 +43,12 @@ describe('Page', () => {
   });
   describe('Projects section', () => {
     it('should render the title', async () => {
-      render(await Page({ params: {} }));
+      render(await Page({ params: Promise.resolve({}) }));
 
       expect(await screen.findByRole('heading', { level: 2, name: 'Projects' })).toBeVisible();
     });
     it('should render the projects with the right content', async () => {
-      render(await Page({ params: {} }));
+      render(await Page({ params: Promise.resolve({}) }));
 
       const list = await screen.findAllByRole('list');
       expect(list).toHaveLength(3);
