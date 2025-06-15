@@ -1,12 +1,12 @@
 import React from 'react';
-import { Entry } from 'contentful';
 
 import styles from './footer.module.css';
 import { Section, SectionProps } from '../section';
+import { FieldContent } from '../../helpers/fetch-contentful/types';
 
 export interface FooterProps {
   title: string;
-  section: ({ fields: SectionProps } & Entry)[];
+  section: ({ fields: SectionProps } & FieldContent)[];
 }
 
 export function Footer({ title, section }: FooterProps) {

@@ -15,8 +15,7 @@ export default async function Layout({ children }: { children: ReactNode }) {
       <div className={styles.static}>
         {fields?.map(({ fields, sys }, index) => {
           const Component = COMPONENT_MAP[sys.contentType.sys.id as keyof typeof COMPONENT_MAP];
-          // fix any type
-          return <Component key={`${sys.id}-${index}`} {...(fields as any)} />;
+          return <Component key={`${sys.id}-${index}`} {...fields} />;
         })}
       </div>
       <main className={styles['main']}>{children}</main>

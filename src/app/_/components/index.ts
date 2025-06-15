@@ -1,21 +1,31 @@
-import { Footer } from './footer';
-import { Header } from './header';
-import { Link } from './link';
-import { contentfulRichText } from './contentful-rich-text';
-import { Section } from './section';
-import { Card } from './card';
-import { PillList } from './pill-list';
-import { Video } from './video';
-import { Image } from './image';
+import { Footer, FooterProps } from './footer';
+import { Header, HeaderProps } from './header';
+import { Link, LinkProps } from './link';
+import { ContentfulRichText, ContentfulRichTextProps } from './contentful-rich-text';
+import { Section, SectionProps } from './section';
+import { Card, CardProps } from './card';
+import { PillList, PillListProps } from './pill-list';
+import { Video, VideoContentProps } from './video';
+import { Image, ImageProps } from './image';
 
 export const COMPONENT_MAP = {
   headerGroup: Header,
   card: Card,
   link: Link,
-  textBlock: contentfulRichText,
+  textBlock: ContentfulRichText,
   pillList: PillList,
   section: Section,
   footer: Footer,
   videoContent: Video,
   image: Image,
 };
+
+export type ComponentMapProps = HeaderProps &
+  CardProps &
+  LinkProps &
+  ContentfulRichTextProps &
+  PillListProps &
+  SectionProps &
+  FooterProps &
+  VideoContentProps &
+  ImageProps;
