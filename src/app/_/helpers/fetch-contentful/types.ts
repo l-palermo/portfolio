@@ -1,3 +1,5 @@
+import { ComponentMapProps } from '../../components';
+
 interface ContentTypeLink {
   sys: {
     type: 'Link';
@@ -24,8 +26,8 @@ interface FileField {
 }
 
 interface IconField {
-  metadata: Metadata;
-  sys: ContentTypeLink & { type: 'Asset'; id: string; revision: number };
+  metadata?: Metadata;
+  sys?: ContentTypeLink & { type: 'Asset'; id: string; revision: number };
   fields: {
     title: string;
     file: FileField;
@@ -33,8 +35,8 @@ interface IconField {
 }
 
 interface LinkEntry {
-  metadata: Metadata;
-  sys: ContentTypeLink & { type: 'Entry'; id: string; revision: number };
+  metadata?: Metadata;
+  sys?: ContentTypeLink & { type: 'Entry'; id: string; revision: number };
   fields: {
     name: string;
     url: string;
@@ -54,16 +56,16 @@ interface EmbeddedEntryContent {
 
 interface TextField {
   nodeType: 'document';
-  data: Record<string, any>;
+  data: Record<string, string>;
   content: EmbeddedEntryContent[];
 }
 
-interface FieldContent {
+export interface FieldContent {
   metadata: Metadata;
   sys: { type: 'Entry'; id: string; revision: number; contentType: ContentTypeLink };
   fields: {
     [key: string]: string | TextField | IconField;
-  };
+  } & ComponentMapProps;
 }
 
 interface SysFields {

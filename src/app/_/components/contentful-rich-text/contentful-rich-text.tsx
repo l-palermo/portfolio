@@ -38,7 +38,7 @@ const options = {
                   </Fragment>
                 );
               }
-              if (nodeType === 'text'  && node.value && node.marks.length) {
+              if (nodeType === 'text' && node.value && node.marks.length) {
                 return (
                   <Fragment key={`${node.value}-${index}`}>
                     {options.renderMark[node.marks[0].type as keyof typeof options.renderMark](node.value)}
@@ -61,6 +61,10 @@ const options = {
   },
 };
 
-export function contentfulRichText({ text }: { text: Document }) {
+export interface ContentfulRichTextProps {
+  text: Document;
+}
+
+export function ContentfulRichText({ text }: ContentfulRichTextProps) {
   return documentToReactComponents(text, options);
 }

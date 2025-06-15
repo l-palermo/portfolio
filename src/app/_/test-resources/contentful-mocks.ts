@@ -1,27 +1,16 @@
 import { Asset } from 'contentful';
 
-export const entryCollectionMock = [
+import { FieldContent } from '../helpers/fetch-contentful/types';
+
+export const entryCollectionMock: FieldContent[] = [
   {
+    metadata: {
+      concepts: [],
+      tags: [],
+    },
     sys: {
       id: '1',
       type: 'Entry' as const,
-      createdAt: '2023-01-01T00:00:00Z' as const,
-      updatedAt: '2023-01-01T00:00:00Z' as const,
-      publishedVersion: 1,
-      environment: {
-        sys: {
-          id: 'env-id',
-          type: 'Link' as const,
-          linkType: 'Environment' as const,
-        },
-      },
-      space: {
-        sys: {
-          id: 'space-id',
-          type: 'Link' as const,
-          linkType: 'Space' as const,
-        },
-      },
       contentType: {
         sys: {
           id: 'section',
@@ -30,72 +19,23 @@ export const entryCollectionMock = [
         },
       },
       revision: 1,
-      locale: 'en-US',
-    },
-    metadata: {
-      tags: [],
     },
     fields: {
       title: 'Section 1',
       description: 'Description for section 1',
       type: 'vertical' as const,
       htmlRole: 'span' as const,
-      fields: [],
-      sys: {
-        id: '1',
-        type: 'Entry' as const,
-        createdAt: '2023-01-01T00:00:00Z' as const,
-        updatedAt: '2023-01-01T00:00:00Z' as const,
-        environment: {
-          sys: {
-            id: 'env-id',
-            type: 'Link' as const,
-            linkType: 'Environment' as const,
-          },
-        },
-        space: {
-          sys: {
-            id: 'space-id',
-            type: 'Link' as const,
-            linkType: 'Space' as const,
-          },
-        },
-        contentType: {
-          sys: {
-            id: 'content-type-id',
-            type: 'Link' as const,
-            linkType: 'ContentType' as const,
-          },
-        },
-        revision: 1,
-        locale: 'en-US',
-      },
-      metadata: {
-        tags: [],
-      },
-    },
+      name: 'Section Name',
+    } as FieldContent['fields'],
   },
   {
+    metadata: {
+      concepts: [],
+      tags: [],
+    },
     sys: {
       id: '2',
       type: 'Entry' as const,
-      createdAt: '2023-01-01T00:00:00Z' as const,
-      updatedAt: '2023-01-01T00:00:00Z' as const,
-      publishedVersion: 1,
-      environment: {
-        sys: {
-          id: 'env-id',
-          type: 'Link' as const,
-          linkType: 'Environment' as const,
-        },
-      },
-      space: {
-        sys: {
-          id: 'space-id',
-          type: 'Link' as const,
-          linkType: 'Space' as const,
-        },
-      },
       contentType: {
         sys: {
           id: 'content-type-id',
@@ -104,50 +44,14 @@ export const entryCollectionMock = [
         },
       },
       revision: 2,
-      locale: 'en-US',
-    },
-    metadata: {
-      tags: [],
     },
     fields: {
       title: 'Section 2',
-      description: 'Description for section 1',
+      description: 'Description for section 2',
       type: 'vertical' as const,
       htmlRole: 'span' as const,
-      fields: [],
-      sys: {
-        id: '2',
-        type: 'Entry' as const,
-        createdAt: '2023-01-01T00:00:00Z' as const,
-        updatedAt: '2023-01-01T00:00:00Z' as const,
-        environment: {
-          sys: {
-            id: 'env-id',
-            type: 'Link' as const,
-            linkType: 'Environment' as const,
-          },
-        },
-        space: {
-          sys: {
-            id: 'space-id',
-            type: 'Link' as const,
-            linkType: 'Space' as const,
-          },
-        },
-        contentType: {
-          sys: {
-            id: 'content-type-id',
-            type: 'Link' as const,
-            linkType: 'ContentType' as const,
-          },
-        },
-        revision: 2,
-        locale: 'en-US',
-      },
-      metadata: {
-        tags: [],
-      },
-    },
+      name: 'Section Name',
+    } as FieldContent['fields'],
   },
 ];
 

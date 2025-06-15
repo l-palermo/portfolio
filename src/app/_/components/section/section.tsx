@@ -1,9 +1,9 @@
 import cx from 'classnames';
-import { Entry } from 'contentful';
 
 import styles from './section.module.css';
 import { COMPONENT_MAP } from '..';
 import { Text } from '../text';
+import { FieldContent } from '../../helpers/fetch-contentful/types';
 
 interface WrapperTagProps {
   children: React.ReactNode;
@@ -22,7 +22,7 @@ export interface SectionProps {
   type: 'vertical' | 'horizontal';
   title: string;
   htmlRole: 'ul' | 'span';
-  fields: Entry[];
+  fields: FieldContent[];
 }
 
 export function Section({ fields, type, title, htmlRole = 'span' }: SectionProps) {
@@ -36,14 +36,13 @@ export function Section({ fields, type, title, htmlRole = 'span' }: SectionProps
       ) : null}
       {Array.isArray(fields)
         ? fields.map(({ fields: _field, sys }, index) => {
-            const Component = COMPONENT_MAP[sys.contentType.sys.id as keyof typeof COMPONENT_MAP];
-            // fix any type
-            return (
-              <WrapperTag key={`${sys.contentType.sys.id}-${index}`} htmlRole={htmlRole}>
-                {Component ? <Component {...(_field as any)} /> : null}
-              </WrapperTag>
-            );
-          })
+          const Component = COMPONENT_MAP[sys.contentType.sys.id as keyof typeof COMPONENT_MAP];
+          return (
+            <WrapperTag key={`${sys.contentType.sys.id}-${index}`} htmlRole={htmlRole}>
+              {Component ? <Component {..._field} /> : null}
+            </WrapperTag>
+          );
+        })
         : null}
     </Tag>
   );

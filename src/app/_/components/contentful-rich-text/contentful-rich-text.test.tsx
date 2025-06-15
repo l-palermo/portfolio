@@ -1,9 +1,9 @@
 import { render, screen } from '@testing-library/react';
 import { BLOCKS, MARKS } from '@contentful/rich-text-types';
 
-import { contentfulRichText } from './contentful-rich-text';
+import { ContentfulRichText } from './contentful-rich-text';
 
-describe('contentfulRichText', () => {
+describe('ContentfulRichText', () => {
   it('renders bold text correctly', () => {
     const text = {
       nodeType: BLOCKS.DOCUMENT as const,
@@ -24,7 +24,7 @@ describe('contentfulRichText', () => {
       ],
     };
 
-    render(<>{contentfulRichText({ text })}</>);
+    render(<>{ContentfulRichText({ text })}</>);
     const boldText = screen.getByText('Bold text');
     expect(boldText).toBeVisible();
     expect(boldText.tagName).toBe('SPAN');
@@ -57,7 +57,7 @@ describe('contentfulRichText', () => {
       ],
     };
 
-    render(<>{contentfulRichText({ text })}</>);
+    render(<>{ContentfulRichText({ text })}</>);
     const listItem = screen.getByText('List item');
     expect(listItem).toBeVisible();
     expect(listItem.tagName).toBe('LI');
@@ -83,7 +83,7 @@ describe('contentfulRichText', () => {
       ],
     };
 
-    render(<>{contentfulRichText({ text })}</>);
+    render(<>{ContentfulRichText({ text })}</>);
     const paragraphText = screen.getByText('Paragraph text');
     expect(paragraphText).toBeVisible();
     expect(paragraphText.tagName).toBe('SPAN');
