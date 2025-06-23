@@ -10,15 +10,16 @@
     "test": "jest"
   },
   "dependencies": {
-    "@vercel/analytics": "1.5.0",
-    "@contentful/rich-text-types": "17.0.0",
     "@contentful/rich-text-react-renderer": "16.0.1",
+    "@contentful/rich-text-types": "17.0.0",
+    "@vercel/analytics": "1.5.0",
+    "@vercel/speed-insights": "^1.2.0",
     "classnames": "2.5.1",
+    "contentful": "11.5.4",
+    "contentful-resolve-response": "1.9.2",
     "next": "15.2.1",
     "react": "19.0.0",
     "react-dom": "19.0.0",
-    "contentful": "11.5.4",
-    "contentful-resolve-response": "1.9.2",
     "react-inlinesvg": "4.2.0"
   },
   "devDependencies": {
@@ -46,5 +47,6 @@
     "stylelint-config-standard": "37.0.0",
     "ts-node": "10.9.2",
     "typescript": "5.8.2"
-  }
+  },
+  "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e"
 }
