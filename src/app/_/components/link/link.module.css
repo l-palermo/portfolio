@@ -11,20 +11,20 @@
 
 .link > svg {
   width: 1.25rem;
-  fill: var(--color-white);
+  fill: var(--color-primary);
   transition:
     transform 0.25s ease-in-out,
     fill 0.25s ease-in-out;
 }
 
 .link:hover {
-  color: var(--color-light-ciano);
+  color: var(--color-secondary);
   text-decoration: underline;
   text-underline-offset: var(--spacing-4);
 }
 
 .link:hover > svg {
-  fill: var(--color-light-ciano);
+  fill: var(--color-secondary);
   transform: translate(var(--spacing-8), 0);
 }
 
@@ -45,7 +45,7 @@
   height: 1.5rem;
   display: flex;
   align-items: center;
-  fill: var(--color-white);
+  fill: var(--color-primary);
   transition: fill 0.5s;
 
   @media (min-width: 1024px) {
