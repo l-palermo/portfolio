@@ -10,7 +10,7 @@
   row-gap: var(--spacing-40);
   padding: var(--spacing-48) var(--spacing-16);
   margin: 0 auto;
-  color: var(--color-white);
+  color: var(--color-primary);
 
   @media (min-width: 1024px) {
     grid-template-rows: 1fr;
@@ -31,7 +31,7 @@
 
   @media (min-width: 1024px) {
     position: fixed;
-    padding: var(--spacing-48) var(--spacing-16);
+    padding: var(--spacing-64) var(--spacing-16);
   }
 }
 

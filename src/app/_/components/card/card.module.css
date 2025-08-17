@@ -4,7 +4,7 @@
   flex-direction: column;
   gap: var(--spacing-8);
   padding: var(--spacing-16) 0;
-  border-color: var(--color-white);
+  border-color: var(--color-primary);
   width: 100%;
 
   & > .card__content > h3 {
@@ -13,7 +13,7 @@
   }
 
   &:hover {
-    color: var(--color-light-ciano);
+    color: var(--color-secondary);
   }
 
   @media (min-width: 768px) {
@@ -24,13 +24,13 @@
 }
 
 .card--mobile {
-  color: var(--color-light-ciano);
+  color: var(--color-secondary);
   text-decoration: none;
 }
 
 .card:hover > .card__content > .card__content__icon {
   transition: transform 0.25s;
-  fill: var(--color-light-ciano);
+  fill: var(--color-secondary);
   transform: translate(var(--spacing-4), calc(-1 * var(--spacing-4)));
 }
 
@@ -39,7 +39,7 @@
   flex-wrap: wrap;
   gap: var(--spacing-4);
   width: 100%;
-  fill: var(--color-white);
+  fill: var(--color-primary);
 }
 
 .card__content__title {
@@ -96,6 +96,7 @@
     inset: 0;
     font-size: var(--font-size-14);
     right: var(--spacing-16);
+    height: 0;
   }
 }
 
@@ -132,14 +133,14 @@
   border-radius: var(--border-radius-16);
 
   &:hover {
-    box-shadow: 0px -2px 2px -1px rgb(0 255 255 / 25%);
-    background-color: var(--color-light-ciano-alpha-5);
+    box-shadow: inset -1px 1px 2px -1px var(--color-secondary-accent);
+    background-color: var(--color-secondary-alpha-5);
   }
 }
 
 .card__link--mobile {
-  box-shadow: 0px -2px 2px -1px rgb(0 255 255 / 25%);
-  background-color: var(--color-light-ciano-alpha-5);
+  box-shadow: inset -1px 1px 2px -1px var(--color-secondary-accent);
+  background-color: var(--color-secondary-alpha-5);
 }
 
 .card__link__label {
@@ -160,9 +161,9 @@
   text-align: center;
   border-radius: var(--border-radius-20);
   padding: var(--spacing-4) var(--spacing-12);
-  box-shadow: 0px -1px 0px 0px rgb(0 255 255 / 25%);
-  background-color: var(--color-light-ciano-alpha-5);
-  color: var(--color-light-ciano);
+  box-shadow: inset -1px 1px 2px -1px var(--color-secondary-accent);
+  background-color: var(--color-secondary-alpha-5);
+  color: var(--color-secondary);
   font-size: var(--font-size-12);
   text-decoration: none !important;
 }
