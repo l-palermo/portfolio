@@ -29,7 +29,7 @@ describe('Background component', () => {
     await waitFor(() => {
       expect(div.style.setProperty).toHaveBeenCalledWith(
         'background',
-        'radial-gradient(at 9.765625% 13.020833333333334%, var(--color-light-blue) 0%, var(--color-dark-blue) 100%)',
+        'radial-gradient(at 9.765625% 13.020833333333334%, var(--color-tertiary-light) 0%, var(--color-tertiary) 100%)',
       );
     });
   });

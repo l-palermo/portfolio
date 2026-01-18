@@ -8,7 +8,7 @@ const handleMouseMove = (ref: RefObject<HTMLDivElement | null>) => (e: MouseEven
 
   ref.current?.style.setProperty(
     'background',
-    `radial-gradient(at ${x * 100}% ${y * 100}%, var(--color-light-blue) 0%, var(--color-dark-blue) 100%)`,
+    `radial-gradient(at ${x * 100}% ${y * 100}%, var(--color-tertiary-light) 0%, var(--color-tertiary) 100%)`,
   );
 };
 

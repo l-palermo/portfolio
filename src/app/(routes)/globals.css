@@ -45,18 +45,62 @@
   --mq-large: 1024px;
   --mq-huge: 1408px;
 
-  /* COLOURS */
+  /* BASE COLOURS */
   --color-white: rgb(255, 255, 255);
   --color-white-alpha-80: rgba(255, 255, 255, 0.8);
-  --color-light-ciano: rgb(102 238 255);
+  --color-white-alpha-5: rgba(255, 255, 255, 0.05);
+
+  /* Light tones */
+  --color-light-ciano: rgb(102, 238, 255);
+  --color-light-ciano-accent: rgba(0, 255, 255, 0.25);
   --color-light-ciano-alpha-5: rgba(0, 255, 255, 0.05);
+
   --color-dark-blue: rgb(0, 33, 58);
-  --color-light-blue: rgb(0, 38, 66);  
+  --color-dark-blue-alpha-80: rgba(0, 33, 58, 0.8);
+
+  --color-light-blue: rgb(0, 42, 66);
+  --color-light-blue-alpha-5: rgba(0, 42, 66, 0.2);
+
+  /* Dark tones (blue palette) */
+  --color-indigo: rgb(0, 21, 171);
+  --color-indigo-alpha-80: rgba(0, 21, 171, 0.8);
+
+  --color-electric-blue: rgb(0, 25, 255);
+  --color-electric-blue-accent: rgba(0, 25, 255, 0.25);
+  --color-electric-blue-alpha-5: rgba(0, 25, 255, 0.05);
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --color-primary: var(--color-white);
+    --color-primary-alpha-80: var(--color-white-alpha-80);
+
+    --color-secondary: var(--color-light-ciano);
+    --color-secondary-accent: var(--color-light-ciano-accent);
+    --color-secondary-alpha-5: var(--color-light-ciano-alpha-5);
+
+    --color-tertiary: var(--color-dark-blue);
+    --color-tertiary-light: var(--color-light-blue);
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-primary: var(--color-indigo);
+    --color-primary-alpha-80: var(--color-indigo-alpha-80);
+
+    --color-secondary: var(--color-electric-blue);
+    --color-secondary-accent: var(--color-electric-blue-accent);
+    --color-secondary-alpha-5: var(--color-electric-blue-alpha-5);
+
+    --color-tertiary: var(--color-white);
+    --color-tertiary-light: var(--color-white-alpha-5);
+  }
 }
 
 ::selection {
   background: rgba(0, 255, 255, 0.2);
-  color: var(--color-light-ciano);
+  color: var(--color-secondary);
 }
 
 * {
@@ -74,7 +118,7 @@ body {
 body {
   width: 100%;
   color: rgb(var(--foreground-rgb));
-  background-color: rgb(0 33 58);
+  background-color: var(--color-tertiary);
 }
 
 a {
