@@ -3,14 +3,15 @@ import { Header, HeaderProps } from './header';
 import { Link, LinkProps } from './link';
 import { ContentfulRichText, ContentfulRichTextProps } from './contentful-rich-text';
 import { Section, SectionProps } from './section';
-import { Card, CardProps } from './card';
+import { CardProps } from './card';
 import { PillList, PillListProps } from './pill-list';
 import { Video, VideoContentProps } from './video';
 import { Image, ImageProps } from './image';
+import { CardWithImage } from './card-with-image';
 
 export const COMPONENT_MAP = {
   headerGroup: Header,
-  card: Card,
+  card: CardWithImage,
   link: Link,
   textBlock: ContentfulRichText,
   pillList: PillList,
