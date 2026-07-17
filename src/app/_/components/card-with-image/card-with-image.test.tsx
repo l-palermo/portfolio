@@ -51,6 +51,12 @@ describe('Card Component', () => {
     expect(screen.getByText('01 . 2021')).toBeVisible();
   });
 
+  it('should render the duration for experience dates', () => {
+    // 2020-01-01 → 2022-07-01 = 2 years, 6 months
+    render(<CardWithImage {...defaultProps} type="experience" startDate="2020-01-01" endDate="2022-07-01" />);
+    expect(screen.getByText(/Duration:.*2y.*6m/)).toBeVisible();
+  });
+
   it('should render the card with an image', () => {
     render(<CardWithImage {...defaultProps} />);
     expect(screen.getByRole('img', { name: defaultProps.imageUrl?.fields.title })).toBeVisible();

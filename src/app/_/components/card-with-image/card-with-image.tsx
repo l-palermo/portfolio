@@ -6,6 +6,7 @@ import { useEffect, useState } from 'react';
 import styles from './card-with-image.module.css';
 import { Link, LinkProps } from '../link';
 import { PillList } from '../pill-list';
+import { differenceYearsMonths } from '../../helpers/difference-years-months';
 
 const transformDate = (date: string) => {
   const dateString = new Date(date).toLocaleDateString('en-GB', {
@@ -25,12 +26,19 @@ const ExperienceDates = ({ startDate, endDate }: ExperienceDatesProps) => {
     return null;
   }
 
+  const { years, months } = differenceYearsMonths(startDate, endDate || new Date().toISOString());
+
   return (
-    <div className={styles['card__aside__date']}>
-      <p>{transformDate(startDate)}</p>
-      <div className={styles['separator']} data-testid="date-separator" />
-      <p>{endDate ? transformDate(endDate) : 'Present'}</p>
-    </div>
+    <>
+      <div className={styles['card__aside__date']}>
+        <p>{transformDate(startDate)}</p>
+        <div className={styles['separator']} data-testid="date-separator" />
+        <p>{endDate ? transformDate(endDate) : 'Present'}</p>
+      </div>
+      <div className={styles['card__aside__date__duration']}>
+        Duration: {years ? `${years}y,` : ''} {months ? `${months}m` : ''}
+      </div>
+    </>
   );
 };
 
