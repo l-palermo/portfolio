@@ -8,6 +8,7 @@ const customJestConfig = {
   setupFilesAfterEnv: ['<rootDir>/jest.setup.ts'],
   moduleNameMapper: {
     '\\.(png|webp|jpg)$': '<rootDir>/__mocks__/fileMock.ts',
+    '@react-pdf/renderer': '<rootDir>/__mocks__/reactPdfMock.tsx',
   },
   testEnvironment: 'jest-environment-jsdom',
 };

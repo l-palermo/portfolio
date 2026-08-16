@@ -4,6 +4,7 @@ const nextConfig: NextConfig = {
   experimental: {
     turbo: {},
   },
+  serverExternalPackages: ['@react-pdf/renderer'],
 };
 
 export default nextConfig;
