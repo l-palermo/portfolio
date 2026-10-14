@@ -1,4 +1,4 @@
-import '../(routes)/globals.css';
+import '../_/global-style/globals.css';
 import { Inter } from 'next/font/google';
 
 const inter = Inter({ subsets: ['latin'], preload: true });
