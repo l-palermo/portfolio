@@ -87,6 +87,7 @@ export interface Entry {
   metadata: Metadata;
   sys: SysFields;
   fields: {
+    id: string;
     type?: string;
     fields?: FieldContent[];
   };
